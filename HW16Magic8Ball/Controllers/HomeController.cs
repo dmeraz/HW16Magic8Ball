@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HW16Magic8Ball.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,13 @@ namespace HW16Magic8Ball.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+        public JsonResult ShakeBall()
+        {
+            //create an object of type Magic8Ball
+            Magic8Ball ball = new Magic8Ball();
+            string reply = ball.getResponse();
+            return Json(reply, JsonRequestBehavior.AllowGet);
         }
     }
 }

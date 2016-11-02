@@ -1,7 +1,23 @@
-﻿<script src="~/Scripts/jquery-3.1.1.js"></script>
+﻿
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+<div class="wrapper">
+    <img src="~/Content/images/magic-eight-ball-answer.png" />
+    <div id="reply"></div>
+</div>
+
+@* Use on click to shake and swap image so that the reply appears inside ball *@
+
+<script>
+    $(document).ready(function () {
+        $("reply").click(function () {
+            $.get("@Url.Action("ShakeBall","Home")", function (response) {
+                $("#reply").text(response);
+            });
+        });
+    });
+</script>
 
