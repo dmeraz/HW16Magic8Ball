@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-//using System.Threading.Tasks;
+using System.Threading.Tasks;
 using System.IO;
 
 namespace HW16Magic8Ball.Models
@@ -12,7 +12,7 @@ namespace HW16Magic8Ball.Models
         //create an array of strings for responses from .txt file
 
         StreamReader magic8ballanswers = new StreamReader("..\\..\\..\\magic8ballanswers.txt");
-        string responses;
+        //string responses;
 
         //get random number
 
