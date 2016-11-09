@@ -13,7 +13,7 @@
 
 <script>
     $(document).ready(function () {
-        $("reply").click(function () {
+        $("img").hover(function () {
             $.get("@Url.Action("ShakeBall","Home")", function (response) {
                 $("#reply").text(response);
             });
