@@ -10,10 +10,11 @@ namespace HW16Magic8Ball.Models
     public class Magic8Ball
     {
         //Open StreamReader
-        StreamReader magic8ballanswers = new StreamReader("..\\..\\..\\magic8ballanswers.txt");
+
+        StreamReader magic8ballanswers = new StreamReader("C:\\Users\\WeCanCodeIT\\Documents\\Visual Studio 2015\\Projects\\HW16Magic8Ball\\magic8ballanswers.txt");
 
         //Store each line of text (a prediction) in a variable
-        string responses;
+        //string responses; No longer needed for List
         int num;
 
         public string getResponse()
@@ -22,9 +23,12 @@ namespace HW16Magic8Ball.Models
             List<string> responses = new List<string>();
 
             //fill array with responses
-            while (magic8ballanswers != null)
+            using (magic8ballanswers)
             {
-                responses.Add(magic8ballanswers.ReadLine());
+                while (magic8ballanswers != null)
+                {
+                    responses.Add(magic8ballanswers.ReadLine());
+                }
             }
 
             //convert list to array
@@ -36,7 +40,5 @@ namespace HW16Magic8Ball.Models
             num = randomNum.Next(0, responsesArray.Length);
             return responsesArray[num];
         }
-        magic8ballanswers.Close();    
-        }
-}
+    }
 }
