@@ -9,25 +9,34 @@ namespace HW16Magic8Ball.Models
 {
     public class Magic8Ball
     {
-        ////Open StreamReader
-        //StreamReader magic8ballanswers = new StreamReader("..\\..\\..\\magic8ballanswers.txt");
+        //Open StreamReader
+        StreamReader magic8ballanswers = new StreamReader("..\\..\\..\\magic8ballanswers.txt");
 
-        ////Store each line of text (a prediction) in a variable
-        //string responses = magic8ballanswers.ReadLine();
+        //Store each line of text (a prediction) in a variable
+        string responses;
+        int num;
 
         public string getResponse()
         {
-            //create an array of strings for responses from .txt file
-            //while (magic8ballanswers != null)
-            {
-                string[] responses = { "Prediction1", "Prediction2", "Prediction3" };
+            //create a list of strings for responses from .txt file
+            List<string> responses = new List<string>();
 
-                //get random number
-                //get random controller object
-                Random randomNum = new Random();
-                int num = randomNum.Next(0, responses.Length); //may be int or var
-                return responses[num];
+            //fill array with responses
+            while (magic8ballanswers != null)
+            {
+                responses.Add(magic8ballanswers.ReadLine());
             }
+
+            //convert list to array
+
+            string[] responsesArray = responses.ToArray();
+            //get random number
+            //get random controller object
+            Random randomNum = new Random();
+            num = randomNum.Next(0, responsesArray.Length);
+            return responsesArray[num];
         }
-    }
+        magic8ballanswers.Close();    
+        }
+}
 }
