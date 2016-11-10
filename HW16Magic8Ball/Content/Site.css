@@ -20,7 +20,7 @@ textarea {
 /*Source1: http://jsfiddle.net/HAcE2/ */
 /*Source2: http://jsfiddle.net/c32jud6j/ */
 img {
-    width: 300px;
+    width: 500px;
 }
 
 .wrapper {
@@ -29,8 +29,9 @@ img {
 
 #reply {
     position: absolute; 
-    top:120px;
-    width:300px;
+    top:200px;
+    width:500px;
+    color:white;
     text-align:center;
     display: none;
 }
