@@ -15,9 +15,7 @@
     $(document).ready(function () {
         $("img").hover(function () {
             $.get("@Url.Action("ShakeBall","Home")", function (response) {
-                $("#reply").text(response);
-                console.log(response);
-            });
+                $("#reply").text(response);            });
         });
     });
 </script>
